@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="utf-8">
+     <title>JQuery Events Activity</title>
+     <!--embedded css styles-->
+     <style>
+          div {
+               border: 1px solid gray;
+               padding: 10px 10px;
+               margin: 50px 50px;
+               }
+          button {
+               margin: 0px 50px;
+               padding: 10px;
+               font-size: 20px;
+               font-weight: bold;
+               height: 60px;
+               border-radius: 5%;
+               }
+     </style>
+     <!--jquery cdn source link-->
+     <script
+     src="https://code.jquery.com/jquery-3.3.1.js"
+     integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+     crossorigin="anonymous"></script>
+</head>
+
+<body>
+     <div>
+          <p id="p1">
+               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus mattis ante cursus augue interdum, varius rutrum justo congue. Mauris aliquam risus vel scelerisque gravida. Curabitur felis magna, malesuada vel eros at, suscipit
+               vehicula nisi. Donec faucibus metus in dapibus ornare. Praesent imperdiet, nibh a gravida rutrum, nisl nunc blandit leo, in iaculis risus lectus eget purus. Vivamus ultrices orci a feugiat efficitur. Etiam et tempus sem. Fusce
+               sollicitudin finibus neque eget venenatis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Maecenas orci nunc, congue sed porttitor in, ultricies pulvinar nibh. Pellentesque dignissim sem fringilla ipsum porttitor, nec
+               viverra diam ultrices. Vivamus porttitor, orci vel luctus laoreet, nunc quam ultricies nisi, vulputate malesuada dolor elit vitae ex. Aenean pharetra dignissim dapibus. Vivamus eu ligula quam. Mauris a ante pharetra, porttitor nisi
+               placerat, faucibus felis.
+          </p>
+     </div>
+     <button id="p1Button" type="button"> Change text color</button>
+     <div>
+          <p id="p2">
+               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus mattis ante cursus augue interdum, varius rutrum justo congue. Mauris aliquam risus vel scelerisque gravida. Curabitur felis magna, malesuada vel eros at, suscipit
+               vehicula nisi. Donec faucibus metus in dapibus ornare. Praesent imperdiet, nibh a gravida rutrum, nisl nunc blandit leo, in iaculis risus lectus eget purus. Vivamus ultrices orci a feugiat efficitur. Etiam et tempus sem. Fusce
+               sollicitudin finibus neque eget venenatis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Maecenas orci nunc, congue sed porttitor in, ultricies pulvinar nibh. Pellentesque dignissim sem fringilla ipsum porttitor, nec
+               viverra diam ultrices. Vivamus porttitor, orci vel luctus laoreet, nunc quam ultricies nisi, vulputate malesuada dolor elit vitae ex. Aenean pharetra dignissim dapibus. Vivamus eu ligula quam. Mauris a ante pharetra, porttitor nisi
+               placerat, faucibus felis.
+          </p>
+     </div>
+     <button id="p2Button" type="button"> Change text color</button>
+
+     <script>
+     	$(document).ready(function() {
+               var colorList = ['blue', 'red', 'green'];
+               $("button").data("color", 0);
+               $("button").click(function(){// anytime a button obj is clicked
+                    $(this).prev().css('color', colorList[($(this).data("color"))]);
+                    if ($(this).data("color") == colorList.length) {
+                         $(this).data("color", 0);
+                    } else {
+                         $(this).data("color", ($(this).data("color"))+1);
+                    }                    
+               }); 
+     	});
+
+     </script>
+
+</body>
+
+</html>
